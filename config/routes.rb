@@ -25,7 +25,7 @@ Rails.application.routes.draw do
       get 'users/leave'
       get 'users/withdraw'
     end
-    resources :posts, only: [:index, :show, :new] do
+    resources :posts, only: [:index, :show, :new, :create, :destroy] do
       resource :favorites, only: [:create, :destroy]
       resources :post_comments, only: [:create, :destroy]
     end
