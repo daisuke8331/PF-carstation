@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
 #顧客用device
   devise_for :customers, skip: [:passwords], controllers: {
     registrations: "public/registrations",
@@ -16,6 +17,7 @@ Rails.application.routes.draw do
       get 'users/withdraw'
     end
     resources :posts, only: [:index, :show, :destroy]
+    resources :experiences, only: [:index, :create, :edit, :update]
   end
 
 

@@ -9,6 +9,11 @@ class Public::RegistrationsController < Devise::RegistrationsController
     posts_path
   end
 
+  def new
+    @customer = Customer.new
+    @experiences = Experience.all
+  end
+
   # GET /resource/sign_up
   # def new
   #   super
@@ -47,7 +52,7 @@ class Public::RegistrationsController < Devise::RegistrationsController
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_up_params
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :name_kana, :telephone_number, :experience])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :name_kana, :telephone_number, :experience_id])
   end
 
   # If you have extra params to permit, append them to the sanitizer.

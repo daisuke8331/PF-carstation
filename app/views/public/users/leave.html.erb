@@ -1,2 +1,19 @@
-<h1>Public::Users#leave</h1>
+<h1>退会確認画面</h1>
 <p>Find me in app/views/public/users/leave.html.erb</p>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 text-center">
+<br>
+      <strong>本当に退会しますか？</strong>
+<br></br>
+      <p>退会すると、一部機能の利用ができなくなります。</p>
+      <p>退会する場合は、『退会する』をクリックしてください。</p>
+
+
+      <%= link_to "退会しない", user_path(@customer.id), class: 'btn btn-primary m-4' %>
+
+      <%= link_to "退会する", user_users_withdraw_path, method: :get, class: 'btn btn-danger m-4' %>
+    </div>
+  </div>
+</div>

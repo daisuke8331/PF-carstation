@@ -31,12 +31,12 @@ class DeviseCreateCustomers < ActiveRecord::Migration[6.1]
       # t.integer  :failed_attempts, default: 0, null: false # Only if lock strategy is :failed_attempts
       # t.string   :unlock_token # Only if unlock strategy is :email or :both
       # t.datetime :locked_at
-      
+
       #テーブル追加 メールとパスワードは上の方に記述されている
       t.string :name
       t.string :name_kana
       t.string :telephone_number
-      t.string :experience
+      t.integer :experience_id
       t.boolean :is_deleted, default: false
       #ここまで
 
