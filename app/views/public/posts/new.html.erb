@@ -1,14 +1,40 @@
-<h1>新規投稿画面</h1>
-<p>Find me in app/views/public/posts/new.html.erb</p>
+<!--新規投稿画面-->
 
-<h1>投稿フォーム</h1>
-<%= form_with model: @post, url:posts_path, method: :create do |f| %>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-10">
+      <br>
+      <h5><b>投稿</b></h5>
+      <br>
+    </div>
+  </div>
 
-  <h4>タイトル</h4>
-  <%= f.text_field :title %>
-  <h4>本文</h4>
-  <%= f.text_area :body %>
-  <h4>画像</h4>
-  <%= f.file_field :image, accept: "image/*" %>
-  <%= f.submit '投稿' %>
-<% end %>
+  <div class="row">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8">
+      <table class="table">
+        <%= form_with model: @post, url:posts_path do |f| %>
+        <tr>
+          <td><b>タイトル</b></td>
+          <td><%= f.text_field :title %></td>
+        </tr>
+        <tr>
+          <td><b>本文</b></td>
+          <td><%= f.text_area :body %></td>
+        </tr>
+        <tr>
+          <td><b>画像</b></td>
+          <td><%= f.file_field :image, accept: "image/*" %></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><%= f.submit '投稿する', class: 'btn btn-success' %></td>
+        </tr>
+        <% end %>
+      </table>
+    </div>
+    <div class="col-lg-2"></div>
+
+  </div>
+</div>
