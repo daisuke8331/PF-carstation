@@ -8,7 +8,7 @@ gem 'rails', '~> 6.1.7', '>= 6.1.7.6'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', '~> 1.4'
 # Use Puma as the app server
-gem 'puma', '~> 5.0'
+gem 'puma', '~> 3.11'  #デプロイの為バージョン変更
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
@@ -58,3 +58,13 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 #以下、自分で追加したGem
 
 gem 'devise'
+
+#以下デプロイ用のGem
+gem 'dotenv-rails'    #環境変数を管理するGem
+group :production do  #本番環境で利用するDB
+  gem 'mysql2'
+end
+
+gem "net-smtp"
+gem "net-pop"
+gem "net-imap"
