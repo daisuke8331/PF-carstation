@@ -14,4 +14,8 @@ class Post < ApplicationRecord
     end
     image.variant(resize_to_fill: [width, height]).processed
   end
+
+  def favorited_by?(customer)
+    favorites.exists?(customer_id: customer.id)
+  end
 end

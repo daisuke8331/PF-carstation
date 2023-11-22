@@ -17,12 +17,28 @@
           <th><!--画像--></th>
           <th>投稿者</th>
           <th>タイトル</th>
+          <th><!--いいね--></th>
+          <th><!--コメント--></th>
         </tr>
         <% @posts.each do |posts| %>
           <tr>
             <td></td>
             <td><%= posts.customer.name %></td>
             <td><%= link_to posts.title, post_path(posts.id) %></td>
+            <td><% if posts.favorited_by?(current_customer) %>
+                  <p>
+                    <%= link_to post_favorites_path(posts), method: :delete do %>
+                      ♥<%= posts.favorites.count %> いいね
+                    <% end %>
+                  </p>
+                  <% else %>
+                  <p>
+                    <%= link_to post_favorites_path(posts), method: :post do %>
+                      ♡<%= posts.favorites.count %> いいね
+                    <% end %>
+                  </p>
+                <% end %></td>
+            <td><p><%= "#{posts.post_comments.count} コメント" %></p></td>
           </tr>
         <% end %>
       </table>
