@@ -11,3 +11,8 @@ Experience.create!(id: 2, name: '経験者')
 Experience.create!(id: 3, name: '元整備士')
 Experience.create!(id: 4, name: '現役整備士')
 Experience.create!(id: 5, name: 'その他:業界関係者')
+
+Admin.create!(
+  email: 'test@test',
+  password: '999999'
+)

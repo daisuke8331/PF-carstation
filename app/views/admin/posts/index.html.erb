@@ -1,2 +1,30 @@
-<h1>Admin::Posts#index</h1>
-<p>Find me in app/views/admin/posts/index.html.erb</p>
+
+<div class="container">
+  <div class="row">
+    <div class="col-10">
+      <h1>投稿一覧(管理者)</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <table class="table table-striped">
+        <tr class="thread-light">
+          <th><!--画像--></th>
+          <th>投稿者</th>
+          <th>タイトル</th>
+          <th><!--コメント--></th>
+        </tr>
+        <% @posts.each do |posts| %>
+          <tr>
+            <td><%= image_tag posts.get_image(50,50) %></td>
+            <td><%= link_to posts.customer.name, admin_user_path(posts.customer)%></td>
+            <td><%= link_to posts.title, admin_post_path(posts.id) %></td>
+
+            <td><p><%= "#{posts.post_comments.count} コメント" %></p></td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</div>

@@ -1,2 +1,27 @@
-<h1>Admin::Posts#show</h1>
-<p>Find me in app/views/admin/posts/show.html.erb</p>
+
+<div class = "container">
+  <div class = "row">
+    <div class = "col-12">
+
+      <h4>タイトル：<%= @post.title %></h4>
+      <div>投稿者：<%= @post.customer.name %></div>
+      <div><%= image_tag @post.get_image(600,400) %></div>
+      <br>
+      <div><%= @post.body %></div>
+
+
+
+      <div>
+        <p>コメント：<%= @post.post_comments.count %>件</p>
+        <% @post.post_comments.each do |post_comment| %>
+          <p><%= post_comment.customer.name %>
+             <%= post_comment.created_at.strftime('%Y/%m/%d') %></br>
+             <%= post_comment.comment %>
+             <%= link_to "削除(管理者)", post_post_comment_path(post_comment.post, post_comment), method: :delete %>
+          </p>
+        <% end %>
+      </div>
+
+    </div>
+  </div>
+</div>
