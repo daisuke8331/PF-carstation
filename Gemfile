@@ -58,6 +58,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 #以下、自分で追加したGem
 
 gem 'devise'
+gem 'jquery-rails'
 
 #以下デプロイ用のGem
 gem 'dotenv-rails'    #環境変数を管理するGem
