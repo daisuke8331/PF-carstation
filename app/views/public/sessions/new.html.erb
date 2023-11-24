@@ -34,7 +34,10 @@
         <div class="field mb-1">
           <%= render "public/shared/links" %>
         </div>
-    
+        
+        <div>
+          <%= link_to "ゲストログイン", customers_guest_sign_in_path, method: :post, class: "btn btn-outline-secondary mr-3" %>
+        </div>
     </div>
   </div>
 </div>
