@@ -24,6 +24,12 @@ class Public::UsersController < ApplicationController
     reset_session
     redirect_to root_path
   end
+  
+  def favorites
+    @customer = Customer.find(params[:id])
+    favorites= Favorite.where(customer_id: @customer.id).pluck(:post_id)
+    @favorite_posts = Post.find(favorites)
+  end
 
   private
   def customer_params

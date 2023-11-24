@@ -1,0 +1,46 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-10">
+      <h2>検索結果</h2>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <table class="table table-hover table-inverse">
+        <!--検索対象モデルがCUstomerの時 -->
+        <% if @range == "Customer" %>
+          <tbody>
+            <tr>
+              <th>ユーザー名</th>
+              <th><!--リンク--></th>
+            </tr>
+            <% @customers.each do |customer| %>
+              <tr>
+                <td><%= customer.name %></td>
+                <td><%= link_to "ユーザーページへ", user_path(customer)%></td>
+              </tr>
+            <% end %>
+          </tbody>
+        <% else %>
+          <!--検索対象モデルがCustomerではない時(= 検索対象モデルがPostの時) -->
+          <tbody>
+            <tr class="thread-light">
+              <th>タイトル</th>
+              <th>テキスト</th>
+              <th><!--リンク--></th>
+            </tr>
+            <% @posts.each do |posts| %>
+            <tr>
+              <td><%= posts.title %></td>
+              <td><%= posts.body %></td>
+              <td><%= link_to "記事へ", post_path(posts.id) %></td>
+            </tr>
+            <% end %>
+          </tbody>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</div>

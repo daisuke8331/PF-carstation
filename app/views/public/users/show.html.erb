@@ -19,6 +19,9 @@
         <p><%= link_to "編集する", edit_user_path, class:"btn btn-success" %></p>
       <% end %>
     </div>
+    <div class="col-lg-2">
+      <p><%=link_to"お気に入り記事",users_favorites_user_path(@customer), class:"btn btn-success" %></p>
+    </div>
   </div>
 
   <br>

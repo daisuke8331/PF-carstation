@@ -44,6 +44,9 @@
                   <li class="nav-link text-light">
                     <%= link_to "ログアウト", destroy_customer_session_path, method: :delete, class:'btn btn-outline-secondary' %>
                   </li>
+                  
+                    <%= render 'layouts/search' %>
+                    
                 <% else %>
                 <!--ログイン前のヘッダー-->
                   <li class="nav-link text-light">
@@ -60,12 +63,7 @@
                   </li>
                 <% end %>
               </ul>
-                <div ciass="align-items-center" >
-                 <%= form_with method: :get, local: :ture do |f| %>
-                 <%= f.text_field :search, placeholder: "search" %>
-                 <%= f.submit "検索" %>
-                <% end %>
-                </div>
+
             </div>
           </div>
         </div>

@@ -10,7 +10,6 @@ Rails.application.routes.draw do
     sessions: "admin/sessions"
   }
 
-
 #管理者用ルーティング
   namespace :admin do
     resources :users, only: [:index, :show] do
@@ -26,6 +25,9 @@ Rails.application.routes.draw do
     resources :users, only: [:show, :edit, :update] do
       get 'users/leave'
       get 'users/withdraw'
+      member do
+        get 'users/favorites'
+      end
     end
     resources :posts, only: [:index, :show, :new, :create, :destroy] do
       resource :favorites, only: [:create, :destroy]
@@ -34,6 +36,7 @@ Rails.application.routes.draw do
     #get 'homes/top'
     root :to => 'homes#top'
     get 'homes/about'
+    get "search" => "searches#search"
   end
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

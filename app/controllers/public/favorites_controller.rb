@@ -1,4 +1,5 @@
 class Public::FavoritesController < ApplicationController
+  
   def create #いいねする
     @post = Post.find(params[:post_id])
     favorite = current_customer.favorites.new(post_id: @post.id)
