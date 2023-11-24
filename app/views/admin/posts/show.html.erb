@@ -9,7 +9,7 @@
       <br>
       <div><%= @post.body %></div>
 
-      <%= link_to "管理者として削除", admin_post_path(@post.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+      <%= link_to "投稿を管理者として削除", admin_post_path(@post.id), method: :delete, class: 'btn btn-danger m-4', "data-confirm" => "本当に削除しますか？" %>
 
       <div>
         <p>コメント：<%= @post.post_comments.count %>件</p>
@@ -17,7 +17,7 @@
           <p><%= post_comment.customer.name %>
              <%= post_comment.created_at.strftime('%Y/%m/%d') %></br>
              <%= post_comment.comment %>
-             <%= link_to "管理者として削除", post_post_comment_path(post_comment.post, post_comment), method: :delete %>
+             <%= link_to "コメントを管理者として削除", post_post_comment_path(post_comment.post, post_comment), method: :delete, class: 'btn btn-danger m-4', "data-confirm" => "本当に削除しますか？" %>
           </p>
         <% end %>
       </div>

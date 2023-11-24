@@ -13,14 +13,18 @@
           <th>会員ID</th>
           <th>名前</th>
           <th>会員ステータス</th>
-          <th></th>
+          <th>状態</th>
         </tr>
         <% @customers.each do |c| %>
           <tr>
             <td><%= c.id %></td>
             <td><%= link_to c.name,admin_user_path(c.id) %></td>
             <td><%= c.experience.name %></td>
-            <td></td>
+            <% if c.is_deleted == false %>
+              <td class="text-success"><b>有効会員</b></td>
+            <% else %>
+             <td class="text-secondary"><b>退会済み</b></td>
+            <% end %>
           </tr>
         <% end %>
       </table>

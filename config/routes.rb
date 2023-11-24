@@ -17,7 +17,7 @@ Rails.application.routes.draw do
 
 #管理者用ルーティング
   namespace :admin do
-    resources :users, only: [:index, :show] do
+    resources :users, only: [:index, :show, :edit, :update] do
       get 'users/withdraw'
     end
     resources :posts, only: [:index, :show, :destroy]

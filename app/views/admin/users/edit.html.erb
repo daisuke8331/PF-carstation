@@ -1,0 +1,53 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h4 class="mb-5 text-color col-3 text-center">会員情報編集</h4>
+
+      <%= form_with model: @customer, url:admin_user_path, method: :patch do |f| %>
+
+      <div class="sign_up-pages col-12">
+        <div class="field-mb-1">
+          <%= f.label :"氏名", class: 'col-3' %>
+          <%= f.text_field :name, class: 'rounded' %>
+        </div>
+
+        <div class="field-mb-1">
+          <%= f.label :"フリガナ", class: 'col-3' %>
+          <%= f.text_field :name_kana, class: 'rounded' %>
+        </div>
+
+        <div class="field-mb-1">
+          <%= f.label :"電話番号", class: 'col-3' %>
+          <%= f.text_field :telephone_number, class: 'rounded' %>
+        </div>
+
+        <div class="field-mb-1">
+          <%= f.label :"メールアドレス", class: 'col-3' %>
+          <%= f.text_field :email, class: 'rounded' %>
+        </div>
+
+        <div class="field-mb-1">
+          <%= f.label :"会員ステータス", class: 'col-3' %>
+          <%= f.select :experience_id, @experiences.map { |experience| [experience.name, experience.id] },
+            { include_blank: '--選択してください--'} %>
+        </div>
+
+        <div class="field-mb-1">
+          <%= f.label :"状態", class: 'col-3' %>
+          <%= f.radio_button :is_deleted, false %>
+          <%= f.label :"有効"%>
+          <%= f.radio_button :is_deleted, true %>
+          <%= f.label :"退会"%>
+        </div>
+
+        <div class="actions">
+          <%= f.label :"　", class: 'col-3' %>
+          <%= f.submit "編集内容を保存", class: 'btn btn-success col-2' %>
+
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

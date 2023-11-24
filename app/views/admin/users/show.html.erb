@@ -50,7 +50,17 @@
           <td><%= @customer.experience.name %></td>
         </tr>
 
+        <tr>
+          <td>状態</td>
+          <% if @customer.is_deleted == false %>
+             <td class="text-success"><b>有効</b></td>
+          <% else %>
+             <td class="text-secondary"><b>退会</b></td>
+          <% end %>
+        </tr>
+
       </table>
+      <%= link_to "編集する", edit_admin_user_path(@customer.id), class: 'btn btn-danger m-4' %>
     </div>
   </div>
 </div>
