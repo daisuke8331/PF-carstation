@@ -3,6 +3,7 @@ class CreatePosts < ActiveRecord::Migration[6.1]
     create_table :posts do |t|
       #会員ID、タイトル、本文追加
       t.integer :customer_id
+      t.integer :category_id
       t.string :title
       t.text :body
       #ここまで

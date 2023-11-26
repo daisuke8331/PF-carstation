@@ -22,6 +22,7 @@ Rails.application.routes.draw do
     end
     resources :posts, only: [:index, :show, :destroy]
     resources :experiences, only: [:index, :create, :edit, :update]
+    resources :categories, only: [:indev, :create, :edit, :update]
   end
 
 
@@ -38,6 +39,7 @@ Rails.application.routes.draw do
       resource :favorites, only: [:create, :destroy]
       resources :post_comments, only: [:create, :destroy]
     end
+    resources :categories, only: [:indev, :create, :edit, :update]
     #get 'homes/top'
     root :to => 'homes#top'
     get 'homes/about'
