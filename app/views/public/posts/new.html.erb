@@ -20,6 +20,11 @@
           <td><%= f.text_field :title %></td>
         </tr>
         <tr>
+          <td>カテゴリ</td>
+          <td><%= f.select :category_id, @categories.map { |category| [category.name, category.id] },
+              { include_blank: '--選択してください--'} %></td>
+        </tr>
+        <tr>
           <td><b>本文</b></td>
           <td><%= f.text_area :body %></td>
         </tr>

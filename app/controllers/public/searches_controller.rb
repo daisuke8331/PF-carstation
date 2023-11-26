@@ -2,7 +2,7 @@ class Public::SearchesController < ApplicationController
 
   before_action :authenticate_customer!
 
-  def search
+  def search #キーワード検索する時
     @range = params[:range]
 
     if @range == "Customer"
@@ -11,5 +11,12 @@ class Public::SearchesController < ApplicationController
       @posts = Post.looks(params[:search], params[:word])
     end
   end
+
+  def category_search #カテゴリで並べる時
+    @category_id = params[:category_id]
+    @posts = Post.where(category_id: @category_id)
+    #@categories = Category.all
+  end
+
 
 end

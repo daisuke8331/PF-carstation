@@ -1,0 +1,19 @@
+<!--カテゴリごとに一覧表示-->
+<div class= "container">
+  <div class="row">
+    <div class="col-12">
+      <h2><b>カテゴリ検索結果</b></h2>
+      <% @posts.each do |posts| %>
+        <h4>タイトル：<%= link_to posts.title, post_path(posts.id) %></h4>
+        <div>投稿者：<%= posts.customer.name %></div>
+        <div><%= image_tag posts.get_image(600,400) %></div>
+        <br>
+        <div><%= posts.body %></div>
+        <div id="favorite_btn_<%= posts.id %>"> <!--いいね非同期通信-->
+          <%= render 'public/favorites/favorites', posts: posts %>
+        </div>
+        <br>
+      <% end %>
+    </div>
+  </div>
+</div>
