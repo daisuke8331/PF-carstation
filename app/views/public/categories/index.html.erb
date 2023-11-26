@@ -33,7 +33,7 @@
           <tr>
             <td><%= category.name %></td>
             <td><%= category.body %></td>
-            <td><%= link_to "編集", edit_category_path(category.id) %></td>
+            <td><%= link_to "編集", edit_category_path(category.id), class: 'btn btn-success' %></td>
           </tr>
         <% end %>
       </table>

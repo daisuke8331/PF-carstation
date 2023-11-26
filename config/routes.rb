@@ -22,7 +22,7 @@ Rails.application.routes.draw do
     end
     resources :posts, only: [:index, :show, :destroy]
     resources :experiences, only: [:index, :create, :edit, :update]
-    resources :categories, only: [:index, :create, :edit, :update]
+    resources :categories, only: [:index, :create, :edit, :update, :destroy]
   end
 
 
