@@ -1,2 +1,29 @@
-<h1>Public::Categories#edit</h1>
-<p>Find me in app/views/public/categories/edit.html.erb</p>
+<!--カテゴリ編集画面(利用者側)-->
+<div class="container">
+  <div class="row">
+    <div class="col-1">
+      <div></div>
+    </div>
+    <div class="col-10">
+      <h1>カテゴリ編集</h1>
+      <table class = "table">
+        <%= form_with model: @category, url: category_path, method: :patch do |f| %>
+          <tr>
+            <td>カテゴリ名</td>
+            <td><%= f.text_field :name %></td>
+          </tr>
+          <tr>
+            <td>説明</td>
+            <td><%= f.text_area :body %></td>
+          </tr>
+          <tr>
+            <td><%= f.submit '変更する', class: 'btn btn-success' %></td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+    <div class="col-1">
+      <div></div>
+    </div>
+  </div>
+</div>

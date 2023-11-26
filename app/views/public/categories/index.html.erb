@@ -1,2 +1,42 @@
-<h1>Public::Categories#index</h1>
-<p>Find me in app/views/public/categories/index.html.erb</p>
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-5">
+      <h1>カテゴリ追加</h1>
+        <table class = "table">
+          <%= form_with model: @category, url: categories_path, method: :post do |f| %>
+          <tr>
+            <td><b>カテゴリ名</b></td>
+            <td><%= f.text_field :name %></td>
+          </tr>
+          <tr>
+            <td><b>説明</b></td>
+            <td><%= f.text_area :body %></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><%= f.submit '追加する', class: 'btn btn-success' %></td>
+          </tr>
+          <% end %>
+        </table>
+    </div>
+
+    <div class="col-7">
+      <h1>カテゴリ一覧</h1>
+      <table class="table table-striped">
+        <tr class="thread-light">
+          <th>カテゴリ名</th>
+          <th>説明</th>
+          <th><!--編集--></th>
+        </tr>
+        <% @categories.each do |category| %>
+          <tr>
+            <td><%= category.name %></td>
+            <td><%= category.body %></td>
+            <td><%= link_to "編集", edit_category_path(category.id) %></td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</div>

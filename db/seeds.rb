@@ -16,7 +16,7 @@ Category.create!(id: 1, name: '雑談', body: '何でもOK 困ったら使う')
 Category.create!(id: 2, name: '挨拶', body: '挨拶する時に使う')
 Category.create!(id: 3, name: '質問', body: '誰かに質問したい時に使う')
 Category.create!(id: 4, name: '整備', body: '整備関係の投稿をするときに使う')
-Category.create!(id: 5, name: '自慢', body: 'とにかく自慢したいときに')
+Category.create!(id: 5, name: '自慢', body: 'とにかく自慢したいときに使う')
 
 Admin.create!(
   email: 'test@test',
