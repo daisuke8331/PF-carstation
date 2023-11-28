@@ -5,16 +5,21 @@
       <h1>Carstationへようこそ</h1>
 </br>
       <div class="btn-wrapper col-10 mx-auto">
-        <div class="row">
+        <div class="row mb-3">
           <%= link_to 'ログイン',new_customer_session_path, class: "btn btn-info btn-sm btn-block mb-3 sign_in" %>
         </div>
-        <div class="row">
+        <div class="row mb-3">
           <%= link_to '新規登録',new_customer_registration_path, class: "btn btn-success btn-sm btn-block mb-3 sign_up" %>
         </div>
-        <div class="row">
+        <div class="row mb-3">
           <%= link_to "ゲストログイン", customers_guest_sign_in_path, method: :post, class: "btn btn-outline-secondary btn-sm btn-block mb-3 guest_sign_in" %>
+        </div>
+        <br>
+        <div class="row mb-3">
+          <%= link_to "管理者", new_admin_session_path %>
         </div>
       </div>
     </div>
   </div>
 </div>
+<br>

@@ -18,7 +18,9 @@ Category.create!(id: 3, name: '質問', body: '誰かに質問したい時に使
 Category.create!(id: 4, name: '整備', body: '整備関係の投稿をするときに使う')
 Category.create!(id: 5, name: '自慢', body: 'とにかく自慢したいときに使う')
 
-Admin.create!(
-  email: 'test@test',
-  password: '999999'
-)
+admin = Admin.new(
+  :id => 2,
+  :email => 'admin@admin',
+  :password => '000000',
+  )
+admin.save

@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
 class Admin::SessionsController < Devise::SessionsController
-  before_action :configure_sign_in_params, only: [:create]
+  #before_action :configure_sign_in_params, only: [:create]
 
-  def after_sign_up_path_for(resource)
-    redirect_to admin_posts_path
+  def after_sign_in_path_for(resource)
+    admin_posts_path
   end
 
   # GET /resource/sign_in
@@ -28,6 +28,10 @@ class Admin::SessionsController < Devise::SessionsController
   # def configure_sign_in_params
   #   devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
   # end
+
+  def after_sign_out_path_for(resource_or_scope)
+    new_admin_session_path
+  end
 
   def configure_sign_in_params
     devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
