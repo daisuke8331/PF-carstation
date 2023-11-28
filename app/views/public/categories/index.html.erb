@@ -3,22 +3,19 @@
   <div class="row">
     <div class="col-5">
       <h1>カテゴリ追加</h1>
-        <table class = "table">
           <%= form_with model: @category, url: categories_path, method: :post do |f| %>
-          <tr>
-            <td><b>カテゴリ名</b></td>
-            <td><%= f.text_field :name %></td>
-          </tr>
-          <tr>
-            <td><b>説明</b></td>
-            <td><%= f.text_area :body %></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td><%= f.submit '追加する', class: 'btn btn-success' %></td>
-          </tr>
+          <div>
+            <div><b>カテゴリ名</b></div>
+            <div><%= f.text_field :name %></div>
+          </div>
+          <div>
+            <div><b>説明</b></div>
+            <div><%= f.text_area :body %></div>
+          </div>
+          <div>
+            <div><%= f.submit '追加する', class: 'btn btn-success' %></div>
+          </div>
           <% end %>
-        </table>
     </div>
 
     <div class="col-7">
