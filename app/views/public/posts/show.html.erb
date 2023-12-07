@@ -9,6 +9,12 @@
       <div>カテゴリ：<%= @post.category.name %></div>
       <div><%= image_tag @post.get_image(600,400) %></div>
       <br>
+      <div class="tag-box ">AI生成タグ：
+      <% @post.tags.each do |tag| %>
+        <span class="label border-bottom"><%= tag.name %>,　</span>
+      <% end %>
+      </div>
+      <br>
       <div><%= @post.body %></div>
       <div id="favorite_btn_<%= @post.id %>"> <!--いいね非同期通信-->
         <%= render 'public/favorites/favorites', posts: @post %>

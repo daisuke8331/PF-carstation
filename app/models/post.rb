@@ -4,7 +4,7 @@ class Post < ApplicationRecord
   has_many :favorites, dependent: :destroy
   belongs_to :customer
   belongs_to :category
-
+  has_many :tags, dependent: :destroy
   #ActiveStorage
   has_one_attached :image
 
