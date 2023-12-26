@@ -32,6 +32,7 @@ class Public::UsersController < ApplicationController
   end
 
   private
+  
   def customer_params
      params.require(:customer).permit(:name, :name_kana, :telephone_number, :email, :experience_id )
   end

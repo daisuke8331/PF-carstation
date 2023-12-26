@@ -30,10 +30,6 @@ class Public::PostsController < ApplicationController
     else
       render :new
     end
-
-  end
-
-  def destroy
   end
 
   private

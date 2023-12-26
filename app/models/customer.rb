@@ -3,13 +3,13 @@ class Customer < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  #アソシエーション
+
   has_many :posts, dependent: :destroy
   has_many :post_comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
   belongs_to :experience
 
-  def self.looks(search, word)
+  def self.looks(search, word) #検索用のアクション
     if search == "perfect_match"
       @customer = Customer.where("name LIKE?", "#{word}")
     elsif search == "forward_match"
@@ -23,7 +23,7 @@ class Customer < ApplicationRecord
     end
   end
 
-  def self.guest
+  def self.guest #ゲストログイン時のステータス
     find_or_create_by!(email: 'guest@example.com') do |customer|
       customer.password = SecureRandom.urlsafe_base64
       customer.name = "ゲスト"

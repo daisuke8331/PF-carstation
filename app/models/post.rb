@@ -1,5 +1,4 @@
 class Post < ApplicationRecord
-  #アソシエーション
   has_many :post_comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
   belongs_to :customer
@@ -16,11 +15,11 @@ class Post < ApplicationRecord
     image.variant(resize_to_fill: [width, height]).processed
   end
 
-  def favorited_by?(customer)
+  def favorited_by?(customer) #いいね数によって表示を分岐
     favorites.exists?(customer_id: customer.id)
   end
 
-  def self.looks(search, word)
+  def self.looks(search, word) #検索用のアクション
     if search == "perfect_match"
       @post = Post.where("body LIKE?","#{word}")
     elsif search == "forward_match"

@@ -5,7 +5,6 @@ class Public::PostCommentsController < ApplicationController
     comment.post_id = post.id
     comment.save
     redirect_to request.referer
-
   end
 
   def destroy
