@@ -5,6 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+#会員ステータスの設定
 Experience.find_or_create_by(id: 1) do |experience|
   experience.name = '初心者'
 end
@@ -25,6 +27,7 @@ Experience.find_or_create_by(id: 5) do |experience|
   experience.name = 'その他:業界関係者'
 end
 
+#カテゴリの初期設定
 Category.find_or_create_by(id: 1) do |category|
   category.name = '雑談'
   category.body = '何でもOK 困ったら使う'
@@ -50,6 +53,7 @@ Category.find_or_create_by(id: 5) do |category|
   category.body = 'とにかく自慢したいときに使う'
 end
 
+#管理者用アカウント設定
 Admin.find_or_create_by(email: "admin@admin") do |admin|
   admin.email = 'admin@admin'
   admin.password = '000000'
