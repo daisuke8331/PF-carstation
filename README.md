@@ -23,8 +23,10 @@
 ・同じ車好きな人と交流したいとき<br>
 ・車について疑問や不明点があり、それを解決したいとき
 ## 設計書
-- ER図:https://drive.google.com/file/d/18IFms-DzEa9KJImhk7hgXn_52_Gt81Jw/view?usp=sharing
-- テーブル定義書:https://docs.google.com/spreadsheets/d/1a3kDCs03wwwtn6tP_YOLyElJOoFyhQUmkdtzziJeGL4/edit?usp=sharing
+- ER図:
+<https://drive.google.com/file/d/18O2P3DJIS8ZIg4KwrwmS0RQ3orljWDFI/view>
+- テーブル定義書:
+<https://docs.google.com/spreadsheets/d/1a3kDCs03wwwtn6tP_YOLyElJOoFyhQUmkdtzziJeGL4/edit?usp=sharing>
 
 ​
 ## 開発環境
